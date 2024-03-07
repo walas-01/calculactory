@@ -1,0 +1,5 @@
+[
+    {"name":"smelter","img":"src/imgs/icons/smelter_icon.png"},
+    {"name":"costructor","img":"src/imgs/icons/constructor_icon.png"},
+    {"name":"assembler","img":"src/imgs/icons/assembler_icon.png"}
+]
