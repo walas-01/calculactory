@@ -20,6 +20,14 @@
         ]
     },
     {
+        "showName": "Copper ore",
+        "name": "copper_ore",
+        "img":"src/imgs/Copper_Ore.png",
+        "outPerMin": [
+            {"name":"copper_ore","amountPerMin":30}
+        ]
+    },
+    {
         "showName": "Copper Ingot",
         "name": "copper_ingot",
         "img":"src/imgs/Copper_Ingot.png",
@@ -30,26 +38,23 @@
         "outPerMin": [{"name":"copper_ore","amountPerMin":30}]
     },
     {
+        "showName": "Coal",
+        "name": "coal",
+        "img":"src/imgs/Coal.png",
+        "outPerMin": [
+            {"name":"coal","amountPerMin":30}
+        ]
+    },
+    {
         "showName": "Steel Ingot",
         "name": "steel_ingot",
         "img":"src/imgs/Steel_Ingot.png",
         "machine": "foundry",
         "inPerMin": [
-            ["iron_ore", 45],
-            ["coal", 45]
+            {"name":"iron_ore","amountPerMin":45},
+            {"name":"coal","amountPerMin":45}
         ],
-        "outPerMin": ["steel_ingot", 2]
-    },
-    {
-        "showName": "Alternate: Steel Ingot",
-        "name": "alt_steel_ingot",
-        "img":"src/imgs/Alternate_Steel_Ingot.png",
-        "machine": "foundry",
-        "inPerMin": [
-            ["iron_ingot", 3],
-            ["coal", 6]
-        ],
-        "outPerMin": ["steel_ingot", 6]
+        "outPerMin": [{"name":"steel_ingot","amountPerMin":45}]
     },
     {
         "showName": "Iron Plate",
@@ -153,7 +158,7 @@
             {"name":"wire","amountPerMin":45},
             {"name":"rubber","amountPerMin":30}
         ],
-        "outPerMin": [{"name":"cable","amountPerMin":10}]
+        "outPerMin": [{"name":"cable","amountPerMin":100}]
     },
     {
         "showName": "Copper Sheet",

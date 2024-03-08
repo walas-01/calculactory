@@ -16,9 +16,9 @@ body {
   max-width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #1A1A1A;
+  background-color: #1d1d1d;
   color: white;
-  background: linear-gradient(0deg, #000000 0%, #1A1A1A 100%);
+  background: linear-gradient(0deg, #000000 0%, #000000 30%, #1d1d1d 100%);
 }
 
 /*------------------------------------------------------[navbar]-*/
@@ -44,17 +44,18 @@ nav {
     justify-content: space-around;
   }
 }
-nav i {
-  visibility: hidden;
+nav .nav-icons a {
+  margin: 0 1rem;
+  display: none;
   color: #E55447;
   cursor: pointer;
 }
 @media (min-width: 480px) {
-  nav i {
-    visibility: visible;
+  nav .nav-icons a {
+    display: inline-block;
   }
 }
-nav i:hover {
+nav .nav-icons a:hover {
   color: white;
   scale: 1.1;
 }
@@ -98,6 +99,12 @@ form div {
 }
 form label {
   font-weight: 700;
+  font-size: small;
+}
+@media (min-width: 480px) {
+  form label {
+    font-size: medium;
+  }
 }
 form input,
 form select {
@@ -132,6 +139,7 @@ form button:hover {
 /*------------------------------------------------------[message]-*/
 .message {
   width: 85%;
+  font-size: small;
   margin: 3rem auto;
   padding: 1rem;
   background-color: #323232;
@@ -140,10 +148,15 @@ form button:hover {
 }
 @media (min-width: 480px) {
   .message {
+    font-size: medium;
     width: 30%;
   }
 }
 .message span {
+  color: #E55447;
+}
+.message a {
+  text-decoration: underline;
   color: #E55447;
 }
 
@@ -159,8 +172,8 @@ form button:hover {
 }
 
 .itemCard {
-  background-color: #1A1A1A;
-  margin: auto auto;
+  background-color: #1d1d1d;
+  margin: 3rem auto;
   font-weight: 700;
   width: 78%;
 }
@@ -171,24 +184,30 @@ form button:hover {
 }
 
 .above-item {
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   border: 2px solid white;
 }
 .above-item p {
   padding: 3px;
-  color: #1A1A1A;
+  color: #1d1d1d;
   background-color: white;
   font-size: 12px;
 }
 @media (min-width: 480px) {
   .above-item p {
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 .above-item img {
-  max-width: 150px;
+  width: 100px;
   margin: 5px;
+}
+@media (min-width: 480px) {
+  .above-item img {
+    width: 150px;
+  }
 }
 
 .item-flow {
@@ -241,7 +260,7 @@ form button:hover {
 .red {
   padding: 2px;
   background-color: #E55447;
-  color: #1A1A1A;
+  color: #1d1d1d;
   font-size: 10px;
   font-weight: 700;
   max-width: 30px;

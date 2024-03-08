@@ -6,7 +6,7 @@ $color1:#E55447;
 $color2:#FF6159;
 $grey1:#606060;
 $grey2:#323232;
-$grey3:#1A1A1A;
+$grey3:#1d1d1d;
 $grey4:#000000;
 
 /*---------------*/
@@ -37,7 +37,7 @@ body{
     background-color: $grey3;
     color: white;
 
-    background: linear-gradient(0deg,$grey4 0%, $grey3 100%);
+    background: linear-gradient(0deg,$grey4 0%, $grey4 30%, $grey3 100%);
 }
 
 
@@ -67,19 +67,25 @@ nav{
         justify-content: space-around;
     }
 
-    i{
-        visibility: hidden;
-        @include mediaQuery(){
-            visibility:visible;
-        }
-        
-        color: $color1;
-        cursor: pointer;
-        &:hover{
-            color: white;
-            scale: 1.1;
+    .nav-icons{
+
+        a{
+            margin: 0 1rem;
+
+            display:none;
+            @include mediaQuery(){
+                display: inline-block;
+            }
+            
+            color: $color1;
+            cursor: pointer;
+            &:hover{
+                color: white;
+                scale: 1.1;
+            }
         }
     }
+
 
 }
 
@@ -126,6 +132,10 @@ form{
 
     label{
         font-weight: 700;
+        font-size: small;
+        @include mediaQuery(){
+            font-size: medium;
+        }
     }
 
     input,
@@ -167,11 +177,21 @@ form{
 .message{
     width: 85%;
 
+    font-size: small;
+
+    
+
     @include mediaQuery(){
+        font-size: medium;
         width: 30%;
     }
 
     span{
+        color: $color1;
+    }
+
+    a{
+        text-decoration: underline;
         color: $color1;
     }
 
@@ -202,7 +222,7 @@ form{
 
 .itemCard{
     background-color: $grey3;
-    margin: auto auto;
+    margin: 3rem auto;
     font-weight: 700;
     width: 78%;
 }
@@ -214,6 +234,7 @@ form{
 
 
 .above-item{
+    margin: 1rem 0;
     display: flex;
     flex-direction: column;
     border: 2px solid white;
@@ -225,13 +246,17 @@ form{
         font-size: 12px;
 
         @include mediaQuery(){
-            font-size: 15px;
+            font-size: 12px;
         }
     }
 
     img{
-        max-width: 150px;
+        width: 100px;
         margin: 5px;
+
+        @include mediaQuery(){
+            width: 150px;
+        }
     }
 }
 
