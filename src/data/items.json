@@ -22,6 +22,7 @@
     {
         "showName": "Copper Ingot",
         "name": "copper_ingot",
+        "img":"src/imgs/Copper_Ingot.png",
         "machine": "smelter",
         "inPerMin": [
             {"name":"copper_ore","amountPerMin":30}
@@ -31,16 +32,18 @@
     {
         "showName": "Steel Ingot",
         "name": "steel_ingot",
+        "img":"src/imgs/Steel_Ingot.png",
         "machine": "foundry",
         "inPerMin": [
-            ["iron_ore", 3],
-            ["coal", 3]
+            ["iron_ore", 45],
+            ["coal", 45]
         ],
         "outPerMin": ["steel_ingot", 2]
     },
     {
         "showName": "Alternate: Steel Ingot",
         "name": "alt_steel_ingot",
+        "img":"src/imgs/Alternate_Steel_Ingot.png",
         "machine": "foundry",
         "inPerMin": [
             ["iron_ingot", 3],
@@ -69,69 +72,155 @@
         "outPerMin": [{"name":"iron_rod","amountPerMin":35}]
     },
     {
+        "showName": "Reinforced Iron Plate",
+        "name": "reinforced_iron_plate",
+        "img":"src/imgs/Reinforced_Iron_Plate.png",
+        "machine": "assembler",
+        "inPerMin": [
+            {"name":"iron_plate","amountPerMin":30},
+            {"name":"screw","amountPerMin":60}
+        ],
+        "outPerMin": [{"name":"reinforced_iron_plate","amountPerMin":5}]
+    },
+    {
+        "showName": "Alternate: Bolted Iron Plate",
+        "name": "alt_bolted_iron_plate",
+        "img":"src/imgs/Alternate_Reinforced_Iron_Plate.png",
+        "machine": "assembler",
+        "inPerMin": [
+            {"name":"iron_plate","amountPerMin":90},
+            {"name":"screw","amountPerMin":250}
+        ],
+        "outPerMin": [{"name":"reinforced_iron_plate","amountPerMin":15}]
+    },
+    {
+        "showName": "Alternate: Stitched Iron Plate",
+        "name": "alt_stitched_iron_plate",
+        "img":"src/imgs/Alternate_Reinforced_Iron_Plate.png",
+        "machine": "assembler",
+        "inPerMin": [
+            {"name":"iron_plate","amountPerMin":18.75},
+            {"name":"wire","amountPerMin":37.5}
+        ],
+        "outPerMin": [{"name":"reinforced_iron_plate","amountPerMin":5.6}]
+    },
+    {
         "showName": "Wire",
         "name": "wire",
         "img":"src/imgs/Wire.png",
         "machine": "constructor",
         "inPerMin": [
-            ["copper_ingot", 1]
+            {"name":"copper_ingot","amountPerMin":15}
         ],
-        "outPerMin": ["wire", 3]
+        "outPerMin": [{"name":"wire","amountPerMin":30}]
     },
     {
         "showName": "Alternate: Iron Wire",
         "name": "alt_iron_wire",
+        "img":"src/imgs/Alternate_Wire.png",
         "machine": "constructor",
         "inPerMin": [
-            ["iron_ingot", 2]
+            {"name":"iron_ingot","amountPerMin":12.5}
         ],
-        "outPerMin": ["wire", 9]
+        "outPerMin": [{"name":"wire","amountPerMin":22.5}]
     },
     {
         "showName": "Alternate: Caterium Wire",
         "name": "alt_caterium_wire",
+        "img":"src/imgs/Alternate_Wire.png",
         "machine": "constructor",
         "inPerMin": [
-            ["caterium_ingot", 1]
+            {"name":"caterium_ingot","amountPerMin":15}
         ],
-        "outPerMin": ["wire", 9]
+        "outPerMin": [{"name":"wire","amountPerMin":120}]
     },
     {
         "showName": "Cable",
         "name": "cable",
         "machine": "constructor",
+        "img":"src/imgs/Cable.png",
         "inPerMin": [
-            ["wire", 2]
+            {"name":"wire","amountPerMin":60}
         ],
-        "outPerMin": ["cable", 1]
+        "outPerMin": [{"name":"cable","amountPerMin":30}]
     },
     {
-        "showName": "Alternate: Rubber Cable",
-        "name": "alt_cable",
+        "showName": "Alternate: Insulated Cable",
+        "name": "alt_insulated_cable",
+        "img":"src/imgs/Alternate_Cable.png",
         "machine": "assembler",
         "inPerMin": [
-            ["wire", 3],
-            ["rubber", 2]
+            {"name":"wire","amountPerMin":45},
+            {"name":"rubber","amountPerMin":30}
         ],
-        "outPerMin": ["cable", 10]
+        "outPerMin": [{"name":"cable","amountPerMin":10}]
+    },
+    {
+        "showName": "Copper Sheet",
+        "name": "copper_sheet",
+        "img":"src/imgs/Copper_Sheet.png",
+        "machine": "constructor",
+        "inPerMin": [
+            {"name":"copper_ingot","amountPerMin":20}
+        ],
+        "outPerMin": [{"name":"copper_sheet","amountPerMin":10}]
     },
     {
         "showName": "Biomass",
         "name": "biomass_from_leaves",
+        "img":"src/imgs/Biomass.png",
         "machine": "constructor",
         "inPerMin": [
-            ["leaves", 10]
+            {"name":"leaves","amountPerMin":120}
         ],
-        "outPerMin": ["biomass", 6]
+        "outPerMin": [{"name":"biomass","amountPerMin":60}]
+    },
+    {
+        "showName": "Biomass",
+        "name": "biomass_from_wood",
+        "img":"src/imgs/Biomass.png",
+        "machine": "constructor",
+        "inPerMin": [
+            {"name":"wood","amountPerMin":60}
+        ],
+        "outPerMin": [{"name":"biomass","amountPerMin":300}]
+    },
+    {
+        "showName": "Solid Biofuel",
+        "name": "solid_biofuel",
+        "img":"src/imgs/Solid Biofuel.png",
+        "machine": "constructor",
+        "inPerMin": [
+            {"name":"biomass","amountPerMin":120}
+        ],
+        "outPerMin": [{"name":"biofuel","amountPerMin":60}]
+    },
+    {
+        "showName": "Liquid Biofuel",
+        "name": "liquid_biofuel",
+        "img":"src/imgs/Liquid_Biofuel.png",
+        "machine": "refinery",
+        "inPerMin": [
+            {"name":"solid_biofuel","amountPerMin":90},
+            {"name":"water","amountPerMin":45}
+        ],
+        "outPerMin": [{"name":"liquid_biofuel","amountPerMin":60}]
+    },
+    {
+        "showName": "Limestone",
+        "name": "limestone",
+        "img":"src/imgs/Limestone.png",
+        "outPerMin": [{"name":"limestone","amountPerMin":60}]
     },
     {
         "showName": "Concrete",
         "name": "concrete",
+        "img":"src/imgs/Concrete.png",
         "machine": "constructor",
         "inPerMin": [
-            ["limestone", 3]
+            {"name":"limestone","amountPerMin":45}
         ],
-        "outPerMin": ["concrete", 1]
+        "outPerMin": [{"name":"concrete","amountPerMin":15}]
     },
     {
         "showName": "Screws",
@@ -144,529 +233,397 @@
         "outPerMin": [{"name":"screw","amountPerMin":40}]
     },
     {
-        "showName": "Alternate: Screw",
-        "name": "alt_screw",
+        "showName": "Alternate: Cast Screw",
+        "name": "alt_cast_screw",
+        "img":"src/imgs/Alternate_Screw.png",
         "machine": "constructor",
         "inPerMin": [
-            ["iron_ingot", 2]
+            {"name":"iron_ingot","amountPerMin":12.5}
         ],
-        "outPerMin": ["screw", 12]
+        "outPerMin": [{"name":"screw","amountPerMin":50}]
     },
     {
         "showName": "Alternate: Steel Screw",
         "name": "alt_steel_screw",
         "machine": "constructor",
+        "img":"src/imgs/Alternate_Screw.png",
         "inPerMin": [
-            ["steel_beam", 1]
+            {"name":"steel_beam","amountPerMin":5}
         ],
-        "outPerMin": ["screw", 36]
-    },
-    {
-        "showName": "Biomass",
-        "name": "biomass_from_wood",
-        "machine": "constructor",
-        "inPerMin": [
-            ["wood", 5]
-        ],
-        "outPerMin": ["biomass", 25]
-    },
-    {
-        "showName": "Biomass",
-        "name": "biomass_from_alien_carapace",
-        "machine": "constructor",
-        "inPerMin": [
-            ["alien_carapace", 1]
-        ],
-        "outPerMin": ["biomass", 100]
-    },
-    {
-        "showName": "Biomass",
-        "name": "biomass_from_mycelia",
-        "machine": "constructor",
-        "inPerMin": [
-            ["mycelia", 10]
-        ],
-        "outPerMin": ["biomass", 10]
-    },
-    {
-        "showName": "Biofuel",
-        "name": "biofuel",
-        "machine": "constructor",
-        "inPerMin": [
-            ["biomass", 4]
-        ],
-        "outPerMin": ["biofuel", 2]
-    },
-    {
-        "showName": "Color Cartridge",
-        "name": "color_cartridge",
-        "machine": "constructor",
-        "inPerMin": [
-            ["flower_petals", 25]
-        ],
-        "outPerMin": ["color_cartridge", 50]
+        "outPerMin": [{"name":"screw","amountPerMin":260}]
     },
     {
         "showName": "Steel Beam",
         "name": "steel_beam",
+        "img":"src/imgs/Steel_Beam.png",
         "machine": "constructor",
         "inPerMin": [
-            ["steel_ingot", 3]
+            {"name":"steel_ingot","amountPerMin":60}
         ],
-        "outPerMin": ["steel_beam", 1]
+        "outPerMin": [{"name":"steel_beam","amountPerMin":15}]
     },
     {
         "showName": "Steel Pipe",
         "name": "steel_pipe",
+        "img":"src/imgs/Steel_Pipe.png",
         "machine": "constructor",
         "inPerMin": [
-            ["steel_ingot", 1]
+            {"name":"steel_ingot","amountPerMin":30}
         ],
-        "outPerMin": ["steel_pipe", 1]
-    },
-    {
-        "showName": "Reinforced Iron Plate",
-        "name": "reinforced_iron_plate",
-        "img":"src/imgs/Reinforced_Iron_Plate.png",
-        "machine": "assembler",
-        "inPerMin": [
-            {"name":"iron_plate","amountPerMin":30},
-            {"name":"screw","amountPerMin":60}
-        ],
-        "outPerMin": [{"name":"reinforced_iron_plate","amountPerMin":5}]
-    },
-    {
-        "showName": "Alternate: Reinforced Iron Plate",
-        "name": "alt_reinforced_iron_plate",
-        "img":"src/imgs/Reinforced_Iron_Plate.png",
-        "machine": "assembler",
-        "inPerMin": [
-            ["iron_plate", 10],
-            ["screw", 24]
-        ],
-        "outPerMin": ["reinforced_iron_plate", 3]
-    },
-    {
-        "showName": "Alternate: Stitched Iron Plate",
-        "name": "alt_stitched_iron_plate",
-        "machine": "assembler",
-        "inPerMin": [
-            ["iron_plate", 6],
-            ["wire", 30]
-        ],
-        "outPerMin": ["reinforced_iron_plate", 3]
-    },
-    {
-        "showName": "Rotor",
-        "name": "rotor",
-        "machine": "assembler",
-        "inPerMin": [
-            ["iron_rod", 3],
-            ["screw", 22]
-        ],
-        "outPerMin": ["rotor", 1]
-    },
-    {
-        "showName": "Modular Frame",
-        "name": "modular_frame",
-        "machine": "assembler",
-        "inPerMin": [
-            ["reinforced_iron_plate", 3],
-            ["iron_rod", 6]
-        ],
-        "outPerMin": ["modular_frame", 1]
+        "outPerMin": [{"name":"steel_pipe","amountPerMin":20}]
     },
     {
         "showName": "Encased Industrial Beam",
         "name": "encased_industrial_beam",
+        "img":"src/imgs/Encased_Industrial_Beam.png",
         "machine": "assembler",
         "inPerMin": [
-            ["steel_beam", 4],
-            ["concrete", 5]
+            {"name":"steel_beam","amountPerMin":24},
+            {"name":"concrete","amountPerMin":30}
         ],
-        "outPerMin": ["encased_industrial_beam", 1]
+        "outPerMin": [{"name":"encased_industrial_beam","amountPerMin": 6}]
+    },
+    {
+        "showName": "Rotor",
+        "name": "rotor",
+        "img":"src/imgs/Rotor.png",
+        "machine": "assembler",
+        "inPerMin": [
+            {"name":"iron_rod","amountPerMin":20},
+            {"name":"screw","amountPerMin":100}
+        ],
+        "outPerMin": [{"name":"rotor","amountPerMin":4}]
+    },
+    {
+        "showName": "Modular Frame",
+        "name": "modular_frame",
+        "img":"src/imgs/Modular_Frame.png",
+        "machine": "assembler",
+        "inPerMin": [
+            {"name":"reinforced_iron_plate","amountPerMin":3},
+            {"name":"iron_rod","amountPerMin":12}
+        ],
+        "outPerMin": [{"name":"modular_frame","amountPerMin":2}]
     },
     {
         "showName": "Stator",
         "name": "stator",
+        "img":"src/imgs/Stator.png",
         "machine": "assembler",
         "inPerMin": [
-            ["steel_pipe", 3],
-            ["wire", 10]
+            {"name":"steel_pipe","amountPerMin":15},
+            {"name":"wire","amountPerMin":40}
         ],
-        "outPerMin": ["stator", 1]
+        "outPerMin": [{"name":"stator","amountPerMin":5}]
     },
     {
         "showName": "Motor",
         "name": "motor",
+        "img":"src/imgs/Motor.png",
         "machine": "assembler",
         "inPerMin": [
-            ["rotor", 2],
-            ["stator", 2]
+            {"name":"rotor","amountPerMin": 10},
+            {"name":"stator","amountPerMin": 10}
         ],
-        "outPerMin": ["motor", 1]
+        "outPerMin": [{"name":"motor","amountPerMin": 5}]
     },
     {
         "showName": "Circuit Board",
         "name": "circuit_board",
+        "img":"src/imgs/Circuit_Board.png",
         "machine": "assembler",
         "inPerMin": [
-            ["wire", 12],
-            ["plastic", 6]
+            {"name":"copper_sheet","amountPerMin": 15},
+            {"name":"plastic","amountPerMin": 30}
         ],
-        "outPerMin": ["circuit_board", 2]
+        "outPerMin": [{"name":"circuit_board","amountPerMin": 7.5}]
+    },
+    {
+        "showName": "Water",
+        "name": "water",
+        "img":"src/imgs/Water.png",
+        "outPerMin": [{"name":"water","amountPerMin": 120}]
+    },
+    {
+        "showName": "Crude Oil",
+        "name": "crude_oil",
+        "img":"src/imgs/Crude_Oil.png",
+        "outPerMin": [{"name":"crude_oil","amountPerMin": 120}]
     },
     {
         "showName": "Plastic",
         "name": "plastic",
+        "img":"src/imgs/Plastic.png",
         "machine": "refinery",
         "inPerMin": [
-            ["crude_oil", 4]
+            {"name":"crude_oil","amountPerMin": 30}
         ],
-        "outPerMin": ["plastic", 3]
+        "outPerMin": [{"name":"plastic","amountPerMin": 20},{"name":"heavy_oil_residue","amountPerMin":10}]
     },
     {
-        "showName": "Alternate: Plastic",
-        "name": "alt_plastic",
-        "machine": "assembler",
+        "showName": "Alternate: Residual Plastic",
+        "name": "alt_residual_plastic",
+        "img":"src/imgs/Alternate_Plastic.png",
+        "machine": "refinery",
         "inPerMin": [
-            ["rubber", 8],
-            ["fuel", 5]
+            {"name":"water","amountPerMin": 20},
+            {"name":"polymer_resin","amountPerMin": 60}
         ],
-        "outPerMin": ["plastic", 9]
+        "outPerMin": [{"name":"plastic","amountPerMin": 20}]
+    },
+    {
+        "showName": "Heavy Oil Residue",
+        "name": "heavy_oil_residue",
+        "img":"src/imgs/Heavy_Oil_Residue.png",
+        "machine": "refinery",
+        "inPerMin": [
+            {"name":"crude_oil","amountPerMin": 30}
+        ],
+        "outPerMin": [{"name":"plastic","amountPerMin": 20},{"name":"heavy_oil_residue","amountPerMin":10}]
+    },
+    {
+        "showName": "Polymer Resin",
+        "name": "polymer_resin",
+        "img":"src/imgs/Polymer_Resin.png",
+        "machine": "refinery",
+        "inPerMin": [
+            {"name":"crude_oil","amountPerMin": 60}
+        ],
+        "outPerMin": [{"name":"fuel","amountPerMin": 40},{"name":"polymer_resin","amountPerMin": 30}]
     },
     {
         "showName": "Fuel",
         "name": "fuel",
+        "img":"src/imgs/Fuel.png",
         "machine": "refinery",
         "inPerMin": [
-            ["crude_oil", 8]
+            {"name":"crude_oil","amountPerMin": 60}
         ],
-        "outPerMin": ["fuel", 5]
+        "outPerMin": [{"name":"fuel","amountPerMin": 40},{"name":"polymer_resin","amountPerMin": 30}]
     },
     {
         "showName": "Rubber",
         "name": "rubber",
+        "img":"src/imgs/Rubber.png",
         "machine": "refinery",
         "inPerMin": [
-            ["crude_oil", 4]
+            {"name":"crude_oil","amountPerMin": 30}
         ],
-        "outPerMin": ["rubber", 4]
+        "outPerMin": [{"name":"rubber","amountPerMin": 20},{"name":"heavy_oil_residue","amountPerMin":20}]
+    },
+    {
+        "showName": "Alternate: Residual Rubber",
+        "name": "alt_residual_rubber",
+        "img":"src/imgs/Alternate_Rubber.png",
+        "machine": "refinery",
+        "inPerMin": [
+            {"name":"polymer_resin","amountPerMin": 40},
+            {"name":"water","amountPerMin": 40}
+        ],
+        "outPerMin": [{"name":"rubber","amountPerMin": 20},{"name":"heavy_oil_residue","amountPerMin":20}]
     },
     {
         "showName": "Heavy Modular Frame",
         "name": "heavy_modular_frame",
+        "img":"src/imgs/Heavy_Modular_Frame.png",
         "machine": "manufacturer",
         "inPerMin": [
-            ["modular_frame", 5],
-            ["steel_pipe", 15],
-            ["encased_industrial_beam", 5],
-            ["screw", 90]
+            {"name":"modular_frame","amountPerMin": 10},
+            {"name":"steel_pipe","amountPerMin": 30},
+            {"name":"encased_industrial_beam","amountPerMin": 10},
+            {"name":"screw","amountPerMin": 200}
         ],
-        "outPerMin": ["heavy_modular_frame", 1]
+        "outPerMin": [{"name":"heavy_modular_frame","amountPerMin": 2}]
     },
     {
         "showName": "Computer",
         "name": "computer",
+        "img":"src/imgs/Computer.png",
         "machine": "manufacturer",
         "inPerMin": [
-            ["circuit_board", 10],
-            ["cable", 12],
-            ["plastic", 18],
-            ["screw", 60]
+            {"name":"circuit_board","amountPerMin": 25},
+            {"name":"cable","amountPerMin": 22},
+            {"name":"plastic","amountPerMin": 45},
+            {"name":"screw","amountPerMin": 130}
         ],
-        "outPerMin": ["computer", 1]
+        "outPerMin": [{"name":"computer","amountPerMin": 2.5}]
+    },
+    {
+        "showName": "Caterium Ore",
+        "name": "caterium_ore",
+        "img":"src/imgs/Caterium_Ore.png",
+        "outPerMin": [{"name":"caterium_ore","amountPerMin": 60}]
     },
     {
         "showName": "Caterium Ingot",
         "name": "caterium_ingot",
+        "img":"src/imgs/Caterium_Ingot.png",
         "machine": "smelter",
         "inPerMin": [
-            ["caterium_ore", 3]
+            {"name":"caterium_ore","amountPerMin": 45}
         ],
-        "outPerMin": ["caterium_ingot", 1]
+        "outPerMin": [{"name":"caterium_ingot","amountPerMin": 15}]
     },
     {
         "showName": "Quickwire",
         "name": "quickwire",
+        "img":"src/imgs/Quickwire.png",
         "machine": "constructor",
         "inPerMin": [
-            ["caterium_ingot", 1]
+            {"name":"caterium_ingot","amountPerMin": 12}
         ],
-        "outPerMin": ["quickwire", 4]
-    },
-    {
-        "showName": "Alternate: Quickwire",
-        "name": "alt_quickwire",
-        "machine": "assembler",
-        "inPerMin": [
-            ["caterium_ingot", 1],
-            ["copper_ingot", 2]
-        ],
-        "outPerMin": ["quickwire", 12]
+        "outPerMin": [{"name":"quickwire","amountPerMin": 60}]
     },
     {
         "showName": "Supercomputer",
         "name": "supercomputer",
+        "img":"src/imgs/Supercompuer.png",
         "machine": "manufacturer",
         "inPerMin": [
-            ["computer", 2],
-            ["ai_limiter", 2],
-            ["high_speed_connector", 3],
-            ["plastic", 21]
+            {"name":"computer","amountPerMin": 3.75},
+            {"name":"ai_limiter","amountPerMin": 3.75},
+            {"name":"high_speed_connector","amountPerMin": 5.6},
+            {"name":"plastic","amountPerMin": 22.5}
         ],
-        "outPerMin": ["supercomputer", 1]
+        "outPerMin": [{"name":"supercomputer","amountPerMin": 1.8}]
     },
     {
-        "showName": "High_Speed Connector",
+        "showName": "High-Speed Connector",
         "name": "high_speed_connector",
+        "img":"src/imgs/High-Speed_Connector.png",
         "machine": "manufacturer",
         "inPerMin": [
-            ["quickwire", 40],
-            ["cable", 10],
-            ["plastic", 6]
+            {"name":"quickwire","amountPerMin": 210},
+            {"name":"cable","amountPerMin": 37.5},
+            {"name":"circuit_board","amountPerMin": 3.75}
         ],
-        "outPerMin": ["high_speed_connector", 1]
+        "outPerMin": [{"name":"high_speed_connector","amountPerMin": 3.75}]
     },
     {
         "showName": "A.I. Limiter",
         "name": "ai_limiter",
+        "img":"src/imgs/AI_Limiter.png",
         "machine": "assembler",
         "inPerMin": [
-            ["circuit_board", 2],
-            ["quickwire", 18]
+            {"name":"copper_sheet","amountPerMin": 25},
+            {"name":"quickwire","amountPerMin": 100}
         ],
-        "outPerMin": ["ai_limiter", 1]
+        "outPerMin": [{"name":"ai_limiter","amountPerMin": 5}]
     },
     {
-        "showName": "Fabric",
-        "name": "fabric",
-        "machine": "assembler",
-        "inPerMin": [
-            ["mycelia", 1],
-            ["biomass", 5]
-        ],
-        "outPerMin": ["fabric", 1]
-    },
-    {
-        "showName": "Filter",
-        "name": "filter",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["coal", 5],
-            ["rubber", 2],
-            ["fabric", 2]
-        ],
-        "outPerMin": ["filter", 1]
-    },
-    {
-        "showName": "Beacon",
-        "name": "beacon",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["iron_plate", 3],
-            ["iron_rod", 1],
-            ["wire", 15],
-            ["cable", 2]
-        ],
-        "outPerMin": ["beacon", 1]
+        "showName": "Raw Quartz",
+        "name": "raw_quartz",
+        "img":"src/imgs/Raw_Quartz.png",
+        "outPerMin": [{"name":"raw_quartz","amountPerMin": 60}]
     },
     {
         "showName": "Quartz Crystal",
         "name": "quartz_crystal",
+        "img":"src/imgs/Quartz_Crystal.png",
         "machine": "constructor",
         "inPerMin": [
-            ["raw_quartz", 2]
+            {"name":"raw_quartz","amountPerMin": 35.7}
         ],
-        "outPerMin": ["quartz_crystal", 1]
-    },
-    {
-        "showName": "Crystal Oscillator",
-        "name": "crystal_oscillator",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["quartz_crystal", 10],
-            ["cable", 14],
-            ["reinforced_iron_plate", 4]
-        ],
-        "outPerMin": ["crystal_oscillator", 1]
-    },
-    {
-        "showName": "Black Powder",
-        "name": "black_powder",
-        "machine": "assembler",
-        "inPerMin": [
-            ["coal", 1],
-            ["sulfur", 2]
-        ],
-        "outPerMin": ["black_powder", 1]
-    },
-    {
-        "showName": "Nobelisk",
-        "name": "nobelisk",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["black_powder", 5],
-            ["steel_pipe", 5],
-            ["beacon", 1]
-        ],
-        "outPerMin": ["nobelisk", 1]
-    },
-    {
-        "showName": "Biomass",
-        "name": "biomass_from_alien_organs",
-        "machine": "constructor",
-        "inPerMin": [
-            ["alien_organs", 1]
-        ],
-        "outPerMin": ["biomass", 100]
-    },
-    {
-        "showName": "Cartridge",
-        "name": "cartridge",
-        "machine": "assembler",
-        "inPerMin": [
-            ["nobelisk", 1],
-            ["steel_pipe", 4]
-        ],
-        "outPerMin": ["cartridge", 4]
-    },
-    {
-        "showName": "Alternate: Wood Coal",
-        "name": "alt_wood_coal",
-        "machine": "constructor",
-        "inPerMin": [
-            ["wood", 3]
-        ],
-        "outPerMin": ["coal", 10]
-    },
-    {
-        "showName": "Turbofuel",
-        "name": "turbofuel",
-        "machine": "assembler",
-        "inPerMin": [
-            ["fuel", 5],
-            ["compacted_coal", 4]
-        ],
-        "outPerMin": ["turbofuel", 5]
+        "outPerMin": [{"name":"quartz_crystal","amountPerMin": 22.5}]
     },
     {
         "showName": "Silica",
         "name": "silica",
+        "img":"src/imgs/Silica.png",
         "machine": "constructor",
         "inPerMin": [
-            ["raw_quartz", 2]
+            {"name":"raw_quartz","amountPerMin": 22.5}
         ],
-        "outPerMin": ["silica", 3]
+        "outPerMin": [{"name":"silica","amountPerMin": 37.5}]
+    },
+    {
+        "showName": "Crystal Oscillator",
+        "name": "crystal_oscillator",
+        "img":"src/imgs/Crystal_Oscillator.png",
+        "machine": "manufacturer",
+        "inPerMin": [
+            {"name":"quartz_crystal","amountPerMin": 18},
+            {"name":"cable","amountPerMin": 14},
+            {"name":"reinforced_iron_plate","amountPerMin": 2.5}
+        ],
+        "outPerMin": [{"name":"crystal_oscillator","amountPerMin": 1}]
+    },
+    {
+        "showName": "Sulfur",
+        "name": "sulfur",
+        "img":"src/imgs/Sulfur.png",
+        "outPerMin": [{"name":"sulfur","amountPerMin": 60}]
+    },
+    {
+        "showName": "Sulfuric Acid",
+        "name": "sulfuric_acid",
+        "img":"src/imgs/Sulfuric_Acid.png",
+        "machine": "refinery",
+        "inPerMin": [
+            {"name":"sulfur","amountPerMin": 50},
+            {"name":"water","amountPerMin": 50}
+        ],
+        "outPerMin": [{"name":"sulfuric_acid","amountPerMin": 50}]
+    },
+    {
+        "showName": "Black Powder",
+        "name": "black_powder",
+        "img":"src/imgs/Black_Powder.png",
+        "machine": "assembler",
+        "inPerMin": [
+            {"name":"coal","amountPerMin": 15},
+            {"name":"sulfur","amountPerMin": 15}
+        ],
+        "outPerMin": [{"name":"black_powder","amountPerMin": 30}]
     },
     {
         "showName": "Aluminum Ingot",
         "name": "aluminum_ingot",
+        "img":"src/imgs/Aluminum_Ingot.png",
         "machine": "foundry",
         "inPerMin": [
-            ["bauxite", 7],
-            ["silica", 6]
         ],
-        "outPerMin": ["aluminum_ingot", 2]
+        "outPerMin": []
     },
     {
-        "showName": "Alclad Aluminum Sheet",
-        "name": "alclad_aluminum_sheet",
-        "machine": "assembler",
-        "inPerMin": [
-            ["aluminum_ingot", 3],
-            ["copper_ingot", 2]
-        ],
-        "outPerMin": ["alclad_aluminum_sheet", 3]
+        "showName": "Uranium",
+        "name": "uranium",
+        "img":"src/imgs/Uranium.png",
+        "outPerMin": [{"name":"uranium","amountPerMin": 60}]
     },
     {
-        "showName": "Heat Sink",
-        "name": "heat_sink",
-        "machine": "assembler",
+        "showName": "Encased Uranium Cell ",
+        "name": "encased_uranium_cell",
+        "img":"src/imgs/Uranium.png",
+        "machine": "blender",
         "inPerMin": [
-            ["alclad_aluminum_sheet", 4],
-            ["rubber", 10]
+            {"name":"uranium","amountPerMin": 50},
+            {"name":"concrete","amountPerMin": 15},
+            {"name":"sulfuric_acid","amountPerMin": 40}
         ],
-        "outPerMin": [
-            {"name":"heat_sink","amountPerMin":1}
-        ]
-    },
-    {
-        "showName": "Radio Control Unit",
-        "name": "radio_control_unit",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["heat_sink", 4],
-            ["rubber", 24],
-            ["crystal_oscillator", 1],
-            ["computer", 1]
-        ],
-        "outPerMin": ["radio_control_unit", 1]
-    },
-    {
-        "showName": "Turbo Motor",
-        "name": "turbo_motor",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["heat_sink", 4],
-            ["radio_control_unit", 2],
-            ["motor", 4],
-            ["rubber", 40]
-        ],
-        "outPerMin": ["turbo_motor", 1]
-    },
-    {
-        "showName": "Battery",
-        "name": "battery",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["alclad_aluminum_sheet", 8],
-            ["wire", 24],
-            ["sulfur", 20],
-            ["plastic", 9]
-        ],
-        "outPerMin": ["battery", 3]
-    },
-    {
-        "showName": "Uranium Cell",
-        "name": "uranium_cell",
-        "machine": "assembler",
-        "inPerMin": [
-            ["uranium", 45],
-            ["concrete", 9]
-        ],
-        "outPerMin": ["uranium_cell", 10]
+        "outPerMin": [{"name":"encased_uranium_cell","amountPerMin": 25},{"name":"sulfuric_acid","amountPerMin": 10}]
     },
     {
         "showName": "Electromagnetic Control Rod",
         "name": "em_control_rod",
+        "img":"src/imgs/Electromagnetic_Control_Rod.png",
         "machine": "assembler",
         "inPerMin": [
-            ["stator", 3],
-            ["ai_limiter", 2]
+            {"name":"stator","amountPerMin": 6},
+            {"name":"ai_limiter","amountPerMin": 4}
         ],
-        "outPerMin": ["em_control_rod", 1]
+        "outPerMin": [{"name":"em_control_rod","amountPerMin": 3}]
     },
     {
-        "showName": "Nuclear Fuel Rod",
-        "name": "nuclear_fuel_rod",
+        "showName": "Uranium Fuel Rod",
+        "name": "uranium_fuel_rod",
+        "img":"src/imgs/Uranium_Fuel_Rod.png",
         "machine": "manufacturer",
         "inPerMin": [
-            ["uranium_cell", 25],
-            ["encased_industrial_beam", 3],
-            ["em_control_rod", 5]
+            {"name":"encased_uranium_cell","amountPerMin": 20},
+            {"name":"encased_industrial_beam","amountPerMin": 1.2},
+            {"name":"em_control_rod","amountPerMin": 2}
         ],
         "outPerMin": ["nuclear_fuel_rod", 1]
-    },
-    {
-        "showName": "Iodine Infused Filter",
-        "name": "iodine_infused_filter",
-        "machine": "manufacturer",
-        "inPerMin": [
-            ["filter", 1],
-            ["quickwire", 8],
-            ["rubber", 2]
-        ],
-        "outPerMin": ["iodine_infused_filter", 1]
     }
 ]

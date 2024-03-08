@@ -1,11 +1,12 @@
 
-const button = document.querySelector(".btn-get")
+const form = document.querySelector("#form")
 
 
 // ----------------------------------------------------------------------------------- [event]
 
 
-button.addEventListener("click",async ()=>{
+form.addEventListener("submit",async (event)=>{
+    event.preventDefault()
     try{
         console.log("[Click!]")
         
@@ -20,7 +21,7 @@ button.addEventListener("click",async ()=>{
 
 // ---------------------------------------------------------------------------------- [ "database"]
 
-// fetch the data from the .json file
+
 
 async function getItem(itemName){
     const data = await fetch("/src/data/items.json")
@@ -45,7 +46,7 @@ async function getItemChain(itemName){
     const item = itemList.find(itm => itm.name === itemName)
 
     const interface = new Interface
-    
+        
     if(item.name !== "iron_ore"){ // [!] recursion
         interface.drawItemCard(item)
         getItemChain(item.inPerMin[0].name)
@@ -61,7 +62,7 @@ async function getItemChain(itemName){
 
 class Interface {
     drawItemCard(itemObject){
-        const body = document.querySelector("#main")
+        const body = document.querySelector(".itemCard-container")
     
         const div = document.createElement("div")
 

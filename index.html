@@ -3,14 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/src/imgs/icons/logo1.png">
     <title>Calculactory</title>
 </head>
 <body>
-    <h1>TEst tittle</h1>
+    <nav>
+        <div class="logo-container">
+            <img src="/src/imgs/icons/logo1.png" alt="logo" class="nav-icon">
+            <img src="/src/imgs/icons/calculactory_logo.png" alt="calculactory_logo" class="nav-name">
+        </div>
+        <a href="https://github.com/walas-01/calculactory"><i class="fa-brands fa-github fa-2xl"></i></a>
+    </nav>
 
-    <main id="main">
-        <button class="btn-get">[get]</button>
 
+    <main>
+
+        <p class="message">Welcome to <span>Calculactory</span>! Simply select the quantity of an item you wish to craft, and I'll calculate all the previous requirements for you.</p>
+
+        <form id="form">
+            <div>
+                <label for="inItem">Wanted Item</label>
+                <select name="inItem" id="inItem">
+                    <option value="iron_ingot" >Iron Ingot</option>
+                    <option value="iron_rod" >Iron Rod</option>
+                    <option value="wire" >Wire</option>
+                </select>
+            </div>
+            <div>
+                <label for="inAmount">Out Per Minute</label>
+                <input type="number" id="inAmount" step="0.5" min="1" max="2000" value="5">
+            </div>
+            <button type="submit" class="btn-get"><img src="/src/imgs/icons/hammer_icon.png" alt="hammer_icon"></button>  
+        </form>
+
+        <section class="itemCard-container">
+
+            <div class="itemCard">
+
+                <div class="itemCard-above flex-row">
+                    <div class="above-item">
+                        <p>Reinforced Iron Plate</p>
+                        <img src="/src/imgs/Reinforced_Iron_Plate.png" alt="img_item">
+                    </div>
+                    
+                    <div class="above-amount">
+                        <div class="flex-row item-flow">
+                            <img src="/src/imgs/icons/icon_out.png" alt="input_img">
+                            <h1>15</h1>
+                            <p class="red">/min</p>
+                        </div>
+                        <div class="flex-row">
+                            <img src="/src/imgs/icons/assembler_icon.png" alt="machine_icon">
+                            <h1>3</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itemCard-bellow">
+
+                    <div class="input-item flex-column">
+                        <div class="flex-row item-flow">
+                            <img src="/src/imgs/icons/icon_in.png" alt="input_img">
+                            <h1>90</h1>
+                            <p class="red">/min</p>
+                        </div>
+                        <img src="/src/imgs/Iron_Plate.png" alt="img_item">
+                        <p>Iron Plate</p>
+                    </div>
+
+                    <div class="input-item">
+                        <div class="flex-row item-flow">
+                            <img src="/src/imgs/icons/icon_in.png" alt="input_img">
+                            <h1>180</h1>
+                            <p class="red">/min</p>
+                        </div>
+                        <img src="/src/imgs/Screw.png" alt="img_item">
+                        <p>Screw</p>
+                    </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
     </main>
 
     <script src="/src/js/app.js"></script>
