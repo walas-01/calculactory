@@ -1,1 +1,1 @@
-Welcome to Calculactory! A Satisfactory calculator that is still under constant update. Simply select the quantity of an item you wish to craft, and I'll calculate all the previous requirements for you. I recommend using it on your phone!
+Welcome to **Calculactory**! A simplistic *Satisfactory* calculator that is still under constant update. I recommend using it on your phone!
