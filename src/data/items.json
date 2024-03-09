@@ -64,7 +64,7 @@
         "inPerMin": [
             {"name":"iron_ingot","amountPerMin":30}
         ],
-        "outPerMin": [{"name":"iron_plate","amountPerMin":30}]
+        "outPerMin": [{"name":"iron_plate","amountPerMin":20}]
     },
     {
         "showName": "Iron Rod",
@@ -74,7 +74,7 @@
         "inPerMin": [
             {"name":"iron_ingot","amountPerMin":15}
         ],
-        "outPerMin": [{"name":"iron_rod","amountPerMin":35}]
+        "outPerMin": [{"name":"iron_rod","amountPerMin":15}]
     },
     {
         "showName": "Reinforced Iron Plate",
