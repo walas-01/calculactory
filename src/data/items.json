@@ -78,7 +78,7 @@
     },
     {
         "showName": "Reinforced Iron Plate",
-        "name": "reinforced_iron_plate",
+        "name": "forced_iron_plate",
         "img":"src/imgs/Reinforced_Iron_Plate.png",
         "machine": "assembler",
         "inPerMin": [
@@ -193,10 +193,10 @@
     {
         "showName": "Solid Biofuel",
         "name": "solid_biofuel",
-        "img":"src/imgs/Solid Biofuel.png",
+        "img":"src/imgs/Solid_Biofuel.png",
         "machine": "constructor",
         "inPerMin": [
-            {"name":"biomass","amountPerMin":120}
+            {"name":"biomass_from_leaves","amountPerMin":120}
         ],
         "outPerMin": [{"name":"biofuel","amountPerMin":60}]
     },
@@ -384,7 +384,7 @@
         "inPerMin": [
             {"name":"crude_oil","amountPerMin": 30}
         ],
-        "outPerMin": [{"name":"plastic","amountPerMin": 20},{"name":"heavy_oil_residue","amountPerMin":10}]
+        "outPerMin": [{"name":"heavy_oil_residue","amountPerMin":10},{"name":"plastic","amountPerMin": 20}]
     },
     {
         "showName": "Polymer Resin",
@@ -394,7 +394,7 @@
         "inPerMin": [
             {"name":"crude_oil","amountPerMin": 60}
         ],
-        "outPerMin": [{"name":"fuel","amountPerMin": 40},{"name":"polymer_resin","amountPerMin": 30}]
+        "outPerMin": [{"name":"polymer_resin","amountPerMin": 30},{"name":"fuel","amountPerMin": 40}]
     },
     {
         "showName": "Fuel",
@@ -482,7 +482,7 @@
     {
         "showName": "Supercomputer",
         "name": "supercomputer",
-        "img":"src/imgs/Supercompuer.png",
+        "img":"src/imgs/Supercomputer.png",
         "machine": "manufacturer",
         "inPerMin": [
             {"name":"computer","amountPerMin": 3.75},
@@ -582,24 +582,15 @@
         "outPerMin": [{"name":"black_powder","amountPerMin": 30}]
     },
     {
-        "showName": "Aluminum Ingot",
-        "name": "aluminum_ingot",
-        "img":"src/imgs/Aluminum_Ingot.png",
-        "machine": "foundry",
-        "inPerMin": [
-        ],
-        "outPerMin": []
-    },
-    {
         "showName": "Uranium",
         "name": "uranium",
         "img":"src/imgs/Uranium.png",
         "outPerMin": [{"name":"uranium","amountPerMin": 60}]
     },
     {
-        "showName": "Encased Uranium Cell ",
+        "showName": "Encased Uranium Cell",
         "name": "encased_uranium_cell",
-        "img":"src/imgs/Uranium.png",
+        "img":"src/imgs/Encased_Uranium_Cell.png",
         "machine": "blender",
         "inPerMin": [
             {"name":"uranium","amountPerMin": 50},
@@ -629,6 +620,6 @@
             {"name":"encased_industrial_beam","amountPerMin": 1.2},
             {"name":"em_control_rod","amountPerMin": 2}
         ],
-        "outPerMin": ["nuclear_fuel_rod", 1]
+        "outPerMin": [{"name":"nuclear_fuel_rod","amountPerMin": 1}]
     }
 ]

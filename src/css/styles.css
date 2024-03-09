@@ -33,13 +33,13 @@ nav {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   nav {
     max-width: 70%;
     margin: auto;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   nav {
     justify-content: space-around;
   }
@@ -50,7 +50,7 @@ nav .nav-icons a {
   color: #E55447;
   cursor: pointer;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   nav .nav-icons a {
     display: inline-block;
   }
@@ -87,7 +87,7 @@ form {
   grid-template-columns: auto auto;
   gap: 1rem;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   form {
     width: 25%;
   }
@@ -101,7 +101,7 @@ form label {
   font-weight: 700;
   font-size: small;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   form label {
     font-size: medium;
   }
@@ -146,7 +146,7 @@ form button:hover {
   border-radius: 3px;
   font-weight: 700;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   .message {
     font-size: medium;
     width: 30%;
@@ -165,7 +165,7 @@ form button:hover {
   max-width: 400px;
   margin: 3rem auto;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   .itemCard-container {
     max-width: 35%;
   }
@@ -195,7 +195,7 @@ form button:hover {
   background-color: white;
   font-size: 12px;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   .above-item p {
     font-size: 12px;
   }
@@ -204,7 +204,7 @@ form button:hover {
   width: 100px;
   margin: 5px;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   .above-item img {
     width: 150px;
   }
@@ -224,7 +224,7 @@ form button:hover {
   display: grid;
   grid-template-columns: auto auto;
 }
-@media (min-width: 480px) {
+@media (min-width: 1600px) {
   .itemCard-bellow {
     display: flex;
     flex-direction: row;
@@ -248,6 +248,7 @@ form button:hover {
 .input-item p {
   font-size: small;
 }
+
 /*------------ pre-done */
 .flex-row {
   display: flex;
@@ -261,7 +262,7 @@ form button:hover {
   padding: 2px;
   background-color: #E55447;
   color: #1d1d1d;
-  font-size: 10px;
   font-weight: 700;
   max-width: 30px;
+  font-size: 10px;
 }/*# sourceMappingURL=styles.css.map */

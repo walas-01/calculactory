@@ -11,7 +11,7 @@ $grey4:#000000;
 
 /*---------------*/
 
-@mixin mediaQuery($medida:480px){
+@mixin mediaQuery($medida:1600px){
     @media(min-width:$medida){
         @content
     }
@@ -294,10 +294,6 @@ form{
     }
     p{
         font-size: small;
-
-        @include mediaQuery(){
-
-        }
     }
 }
 
@@ -319,7 +315,7 @@ form{
     padding: 2px;
     background-color: $color1;
     color: $grey3;
-    font-size: 10px;
     font-weight: 700;
     max-width: 30px;
+    font-size: 10px;
 }

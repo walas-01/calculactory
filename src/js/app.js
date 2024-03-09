@@ -1,16 +1,10 @@
-
 const form = document.querySelector("#form")
-
-
 
 // ----------- [start] -
 
 start()
 
-
-
 // ----------------------------------------------------------------------------------- [event]
-
 
 form.addEventListener("submit",async (event)=>{
     event.preventDefault()
@@ -18,17 +12,14 @@ form.addEventListener("submit",async (event)=>{
 
         document.querySelector(".itemCard-container").innerHTML = ""
         
-        getItem(form.querySelector("#inItem").value,form.querySelector("#inAmount").value)
+        getItemChain(form.querySelector("#inItem").value,form.querySelector("#inAmount").value)
 
     }catch(err){
         console.log(err)
     }
 })
 
-
 // ---------------------------------------------------------------------------------- [ "database"]
-
-
 
 async function getItem(itemName,amount){
     const data = await fetch("/src/data/items.json")
@@ -40,9 +31,7 @@ async function getItem(itemName,amount){
     ui.createItemCard(item,amount)
 }
 
-
-
-async function getItemChain(itemName){
+async function getItemChain(itemName,amountToProduce){ 
 
     const data = await fetch("/src/data/items.json")
     const itemList = await data.json()
@@ -52,24 +41,15 @@ async function getItemChain(itemName){
     const interface = new Interface
         
     if(checkIfIsRawMaterial(item.name)){ // [!] recursion
-        interface.drawItemCard(item)
+        interface.createItemCard(item,amountToProduce)
 
-
-        console.log(item.inPerMin[0])
-        
-        
-        item.inPerMin.forEach((element) => {
-            getItemChain(element.name)
+        console.log("[!] Checkpoint!")
+        item.inPerMin.forEach((element) => { //? /////////////////////////////////////////////////////// [label]
+            // getItemChain(element.name, amount)
         });
-        console.log("-------------[LOOP¨!]")
-
-    }else{
-        interface.drawItemCard(item)
+        
     }
-    
 }
-
-
 
 // --------------------------- [others]
 
@@ -88,7 +68,7 @@ async function start(){
 }
 
 function checkIfIsRawMaterial(name){
-    if(name !== "iron_ore" && name !== "copper_ore" && name !== "limestone" && name !== "coal" && name !== "caterium_ore" && name !== "water" && name !== "uranium" && name !== "sulfur" && name !== "quartz_crystal"  && name !== "biomass_from_leaves" && name !== "biomass_from_wood"){ // [!] recursion
+    if(name !== "iron_ore" && name !== "copper_ore" && name !== "limestone" && name !== "coal" && name !== "caterium_ore" && name !== "crude_oil" && name !== "water" && name !== "uranium" && name !== "sulfur" && name !== "raw_crystal"  && name !== "biomass_from_leaves" && name !== "biomass_from_wood"){ 
         return true
     }else{
         return false
@@ -98,11 +78,12 @@ function checkIfIsRawMaterial(name){
 async function getMachineIcon(machineName){
     const data = await fetch("/src/data/machines.json")
     const machineList = await data.json()
+
     const machine = machineList.find(mch => mch.name === machineName)
 
     return machine.img
-
 }
+
 // --------------------------- [classes]
 
 class Interface {
@@ -114,7 +95,6 @@ class Interface {
 
         form.querySelector("#inItem").appendChild(option)
     }
-
 
     async createItemCard(item,output){
         const productRate = Number((output/item.outPerMin[0].amountPerMin).toFixed(1))
@@ -130,28 +110,24 @@ class Interface {
             const itemList = await data.json()
             const inItem = itemList.find(itm => itm.name === element.name)
 
-            console.log(inItem)
+            
+
 
             const div = document.createElement('div')
             const innerHTML = `
             <div class="input-item">
                 <div class="flex-row item-flow">
                     <img src="/src/imgs/icons/icon_in.png" alt="input_img">
-                    <h1>${element.amountPerMin*productRate}</h1>
+                    <h3>${Number((element.amountPerMin*productRate).toFixed(0))}</h3>
                     <p class="red">/min</p>
                 </div>
                 <img src="${inItem.img}" alt="img_item">
                 <p>${inItem.showName}</p>
             </div>`
 
-            console.log("---------------")
-            console.log(div)
-
             div.innerHTML = innerHTML
             itemCard_bellow.appendChild(div)
         })
-
-
 
         const html = `<div class="itemCard">
 
@@ -164,7 +140,7 @@ class Interface {
             <div class="above-amount">
                 <div class="flex-row item-flow">
                     <img src="/src/imgs/icons/icon_out.png" alt="input_img">
-                    <h1>${Number(output).toFixed(1)}</h1>
+                    <h1>${output}</h1>
                     <p class="red">/min</p>
                 </div>
                 <div class="flex-row">
@@ -184,7 +160,6 @@ class Interface {
         
         document.querySelector(".itemCard").appendChild(itemCard_bellow)
     }
-
 
     drawItemCard(itemObject){
         const body = document.querySelector(".itemCard-container")
@@ -208,9 +183,6 @@ class Interface {
     }
 }
 
-
-
-
 class Item {
     constructor(name,showName,img,machine,inPerMinute,outPerMinute){
         this.name = name
@@ -220,9 +192,4 @@ class Item {
         this.inPerMinute = inPerMinute
         this.outPerMinute = outPerMinute
     }
-
-    async getCost(amountToProduce){
-        return
-    }
-
 }
