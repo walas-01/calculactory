@@ -29,13 +29,7 @@ async function getItemChain(itemName,amountToProduce){
     if(checkIfIsRawMaterial(item.name)){ // [!] recursion
         const productRate = await createItemCard(item,amountToProduce)
 
-        console.log("[!] Checkpoint!")
-
         item.inPerMin.forEach((element) => { // forEach
-
-            console.log("[productRate]: ",productRate)
-            console.log("[amount to produce]: ",element.amountPerMin * productRate)
-
 
             getItemChain(element.name, element.amountPerMin * productRate)
         });
