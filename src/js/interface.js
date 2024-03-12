@@ -1,6 +1,6 @@
+import {fetchItem} from "./fetcher.js"
 
-
-async function addInputOption(name, showName) { // --------------------------- addInputOption
+export async function addInputOption(name, showName) { // --------------------------- addInputOption
     const option = document.createElement("option")
     option.value = name
     option.innerText = showName
@@ -10,7 +10,7 @@ async function addInputOption(name, showName) { // --------------------------- a
 
 
 
-async function createItemCard(item, output) { // ------------------------------------------------ createItemCard
+export async function createItemCard(item, output) { // ------------------------------------------------ createItemCard
     const productRate = Number((output / item.outPerMin[0].amountPerMin).toFixed(1))
 
     const itemCard_bellow = document.createElement('div') 
@@ -69,4 +69,14 @@ async function createItemCard(item, output) { // -------------------------------
     itemCard.appendChild(itemCard_bellow)
 
     return productRate
+}
+
+
+async function getMachineIcon(machineName){ // ---------------------- getMachineIcon
+    const data = await fetch("/src/data/machines.json")
+    const machineList = await data.json()
+
+    const machine = machineList.find(mch => mch.name === machineName)
+
+    return machine.img
 }

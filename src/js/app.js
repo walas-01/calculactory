@@ -1,4 +1,8 @@
+import {addInputOption,createItemCard} from "./interface.js"
+import {fetchItem} from "./fetcher.js"
+
 const form = document.querySelector("#form")
+
 
 // ----------- [start] -
 
@@ -59,22 +63,4 @@ function checkIfIsRawMaterial(name){
     }else{
         return false
     }
-}
-
-async function getMachineIcon(machineName){
-    const data = await fetch("/src/data/machines.json")
-    const machineList = await data.json()
-
-    const machine = machineList.find(mch => mch.name === machineName)
-
-    return machine.img
-}
-
-
-async function fetchItem(itemName){
-    const data = await fetch("/src/data/items.json")
-    const itemList = await data.json()
-    const item = itemList.find(itm => itm.name === itemName)
-
-    return item
 }
