@@ -1,5 +1,5 @@
-import {addInputOption,createItemCard} from "./interface.js"
-import {fetchItem} from "./fetcher.js"
+import {addInputOption,createItemCard,createChildCard} from "./interface.js"
+import {fetchItem,checkIfIsRawMaterial} from "./fetcher.js"
 
 const form = document.querySelector("#form")
 const tree = document.querySelector(".tree")
@@ -19,7 +19,6 @@ form.addEventListener("submit",async (event)=>{
         const inAmount = Number(form.querySelector("#inAmount").value)
         
         drawItemCard(inItem,inAmount)
-        //getItemChain(inItem,inAmount)
 
     }catch(err){
         console.log(err)
@@ -27,13 +26,31 @@ form.addEventListener("submit",async (event)=>{
 })
 
 tree.addEventListener("click",async (event)=>{
-    console.log(event.target.parentElement)
+    if(event.target.classList.contains("button")){
+        const button = event.target 
 
-    if(event.target.classList.contains("card") || event.target.parentElement.classList.contains("card")){
-        const h1 = document.createElement("h1")
-        h1.innerText = "SEXO"
-    
-        event.target.appendChild(h1)
+        /// 1- get item 
+        const itemName = button.parentElement.getAttribute("name")
+
+        
+        /// 2- create space por children
+        const ul = document.createElement("ul")
+        button.parentElement.parentElement.appendChild(ul)
+        
+        /// 3- remove button
+        button.parentElement.removeChild(button)
+
+        /// 4- get item info
+        const item = await fetchItem(itemName)
+
+        /// 5- make card for each inPerMin item AND add to the space
+        item.inPerMin.forEach(async (element,i) => {
+            const inputItem = await fetchItem(element.name)
+            const childCard = await createChildCard(inputItem,item.inPerMin[i].amountPerMin)
+
+            ul.appendChild(childCard)
+        })
+
     }
 })
 
@@ -45,25 +62,6 @@ async function drawItemCard(itemName,amountToProduce){
 
     await createItemCard(item,amountToProduce)
 }
-
-
-
-
-async function getItemChain(itemName,amountToProduce){ 
-
-    const item = await fetchItem(itemName)
-        
-    if(checkIfIsRawMaterial(item.name)){ // [!] recursion
-        const productRate = await createItemCard(item,amountToProduce)
-
-        item.inPerMin.forEach((element) => { // forEach
-
-            getItemChain(element.name, element.amountPerMin * productRate)
-        });
-        
-    }
-}
-
 
 // --------------------------------------------------- [methods]
 
@@ -78,12 +76,4 @@ async function start(){
 
         }
     });
-}
-
-function checkIfIsRawMaterial(name){
-    if(name !== "iron_ore" && name !== "copper_ore" && name !== "limestone" && name !== "coal" && name !== "caterium_ore" && name !== "crude_oil" && name !== "water" && name !== "uranium" && name !== "sulfur" && name !== "raw_quartz"  && name !== "biomass_from_leaves" && name !== "biomass_from_wood"){ 
-        return true
-    }else{
-        return false
-    }
 }
