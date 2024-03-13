@@ -102,118 +102,12 @@ nav{
     }
 }
 
-/*------------------------------------------------------[form]-*/
 
-main{
-    margin: 3rem auto;
-}
 
-form{
-    width: 85%;
-
-    @include mediaQuery(){
-        width: 25%;
-    }
-
-    margin: auto auto;
-    padding: 1rem;
-    background-color: $grey2;
-    border-radius: 3px;
-
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 1rem;
-
-    div{
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    label{
-        font-weight: 700;
-        font-size: small;
-        @include mediaQuery(){
-            font-size: medium;
-        }
-    }
-
-    input,
-    select{
-        background-color: white;
-        padding: 5px;
-        font-weight: 700;
-        border: none;
-        border-radius: 3px;
-
-        option{
-        font-weight: 600;
-            
-        }
-    }
-
-    button{
-        border: none;
-        padding: 10px;
-        background-color: $color1;
-        border-radius: 2px;
-        grid-column: 1 / 3;
-        font-weight: 700;
-        font-size: large;
-        cursor: pointer;
-        img{
-            max-width: 60px;
-        }
-
-        &:hover{
-            background-color: $color2;
-            scale: 1.01;
-        }
-    }
-}
-
-/*------------------------------------------------------[message]-*/
-
-.message{
-    width: 85%;
-
-    font-size: small;
-
-    
-
-    @include mediaQuery(){
-        font-size: medium;
-        width: 30%;
-    }
-
-    span{
-        color: $color1;
-    }
-
-    a{
-        text-decoration: underline;
-        color: $color1;
-    }
-
-    margin: 3rem auto;
-    padding: 1rem;
-    background-color: $grey2;
-    border-radius: 3px;
-
-    font-weight: 700;
-}
 
 
 
 /*/------------------------------------------------------------[ Card ]*/
-
-.itemCard-container{
-    margin: 5rem 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 
 .card{
@@ -224,28 +118,14 @@ form{
     grid-template-rows: repeat(2,1fr);
     grid-gap: 10px;
 
-    background-color: $grey3;
-
-    button{
-        grid-column: 1/4;
-        border: none;
-        border-radius: 2px;
-        background-color: $color1;
-        color: $grey3;
-        font-size: large;
-        font-weight: 700;
-        &:hover{
-            background-color: white;
-            cursor: pointer;
-        }
-    }
+    border: 1px solid red;
 }
 
 .card-img{
-    grid-column: 1/2;
+    grid-column: 1 / 2;
     grid-row: 1/3;
 
-    border: 1px solid white;
+    border: 1px solid red;
 
     display: flex;
     flex-direction: column;
@@ -253,11 +133,10 @@ form{
 
     h5{
         font-size: 10px;
-        font-weight: 800;
-        
-        color: $grey3;
-        background-color: white;
-        width: 100%;
+    }
+
+    img{
+        width: 80px;
     }
 }
 
@@ -308,16 +187,18 @@ form{
     }
 }
 
-.card-img-icon{
-    width: 80px;
+
+
+.tree{
+    img{
+        width: 25px;
+    }
 }
-
-
 
 /*--------------------------------------------------------------------*/
 
 .tree ul {
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 .tree li {
@@ -372,17 +253,17 @@ ul.tree>li:first-child::after {
     padding:2px 5px;
 }
 
-.tree li .card:hover, .tree li .card:hover+ul li .card,
-.tree li .card:focus, .tree li .card:focus+ul li .card {
+.tree li a:hover, .tree li a:hover+ul li a,
+.tree li a:focus, .tree li a:focus+ul li a {
     background: #ccc; color: #000; border: 1px solid #000;
     background-color: red;
     cursor: pointer;
 }
 
-.tree li.card:hover+ul li::after, .tree li .card:focus+ul li::after,
-.tree li .card:hover+ul li::before, .tree li .card:focus+ul li::before 
-.tree li .card:hover+ul::before, .tree li .card:focus+ul::before 
-.tree li .card:hover+ul ul::before, .tree li .card:focus+ul ul::before{
+.tree li a:hover+ul li::after, .tree li a:focus+ul li::after,
+.tree li a:hover+ul li::before, .tree li a:focus+ul li::before 
+.tree li a:hover+ul::before, .tree li a:focus+ul::before 
+.tree li a:hover+ul ul::before, .tree li a:focus+ul ul::before{
     border-color:  #000; /*connector color on hover*/
 }
 

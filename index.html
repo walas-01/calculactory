@@ -42,60 +42,74 @@
             <button type="submit" class="btn-get"><img src="/src/imgs/icons/hammer_icon.png" alt="hammer_icon"></button>  
         </form>
 
-        <section class="itemCard-container">
 
-            <!--
-                <div class="itemCard">
-
-                    <div class="itemCard-above flex-row">
-                        <div class="above-item">
-                            <p>Reinforced Iron Plate</p>
-                            <img src="/src/imgs/Reinforced_Iron_Plate.png" alt="img_item">
-                        </div>
-                        
-                        <div class="above-amount">
-                            <div class="flex-row item-flow">
-                                <img src="/src/imgs/icons/icon_out.png" alt="input_img">
-                                <h1>15</h1>
-                                <p class="red">/min</p>
-                            </div>
-                            <div class="flex-row">
-                                <img src="/src/imgs/icons/assembler_icon.png" alt="machine_icon">
-                                <h1>3</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="itemCard-bellow">
-
-                        <div class="input-item">
-                            <div class="flex-row item-flow">
-                                <img src="/src/imgs/icons/icon_in.png" alt="input_img">
-                                <h1>90</h1>
-                                <p class="red">/min</p>
-                            </div>
-                            <img src="/src/imgs/Iron_Plate.png" alt="img_item">
-                            <p>Iron Plate</p>
-                        </div>
-
-                        <div class="input-item">
-                            <div class="flex-row item-flow">
-                                <img src="/src/imgs/icons/icon_in.png" alt="input_img">
-                                <h1>180</h1>
-                                <p class="red">/min</p>
-                            </div>
-                            <img src="/src/imgs/Screw.png" alt="img_item">
-                            <p>Screw</p>
-                        </div>
-
-
-                        </div>
-
-                    </div>
+            <div class="card">
+                <div class="card-img">
+                    <h5>Reinforced Iron Plate</h5>
+                    <img  class="card-img-icon" src="/src/imgs/Reinforced_Iron_Plate.png" alt="img">
                 </div>
-            -->
+                <div class="card-output">
+                    <img src="/src/imgs/icons/icon_out.png" alt="outputIcon">
+                    <h5>90</h5>
+                    <p>/min</p>
+                </div>
+                <div class="card-machine">
+                    <img src="/src/imgs/icons/assembler_icon.png" alt="imgMachine">
+                    <p>2</p>
+                </div>
+                <button class="button">[ + ]</button>
+            </div>
 
-        </section>
+
+
+            <ul class="tree itemCard-container">
+                <li><div>ELEMENT</div>
+                    <ul>
+                        <li><a>Iron Plate</a>
+                            <ul>
+                                <li><a>Iron Ingot</a></li>
+                                <li><a>Iron Ingot</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Screw</a>
+                            <ul>
+                                <li><a>Iron Rod</a>
+                                    <ul>
+                                        <li><a>Iron Ingot</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!---
+            <ul class="tree itemCard-container">
+                <li><div>ELEMENT</div>
+                    <ul>
+                        <li><a>Iron Plate</a>
+                            <ul>
+                                <li><a>Iron Ingot</a></li>
+                                <li><a>Iron Ingot</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Screw</a>
+                            <ul>
+                                <li><a>Iron Rod</a>
+                                    <ul>
+                                        <li><a>Iron Ingot</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+           
+
+
     </main>
 
     <script src="/src/js/app.js" type="module"></script>

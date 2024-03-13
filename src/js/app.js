@@ -2,7 +2,7 @@ import {addInputOption,createItemCard} from "./interface.js"
 import {fetchItem} from "./fetcher.js"
 
 const form = document.querySelector("#form")
-
+const tree = document.querySelector(".tree")
 
 // ----------- [start] -
 
@@ -13,17 +13,40 @@ start()
 form.addEventListener("submit",async (event)=>{
     event.preventDefault()
     try{
-
         document.querySelector(".itemCard-container").innerHTML = ""
+
+        const inItem = form.querySelector("#inItem").value
+        const inAmount = Number(form.querySelector("#inAmount").value)
         
-        getItemChain(form.querySelector("#inItem").value,form.querySelector("#inAmount").value)
+        drawItemCard(inItem,inAmount)
+        //getItemChain(inItem,inAmount)
 
     }catch(err){
         console.log(err)
     }
 })
 
+tree.addEventListener("click",async (event)=>{
+    console.log(event.target.parentElement)
+
+    if(event.target.classList.contains("card") || event.target.parentElement.classList.contains("card")){
+        const h1 = document.createElement("h1")
+        h1.innerText = "SEXO"
+    
+        event.target.appendChild(h1)
+    }
+})
+
 // ---------------------------------------------------------------------------------- [ main"]
+
+
+async function drawItemCard(itemName,amountToProduce){
+    const item = await fetchItem(itemName)
+
+    await createItemCard(item,amountToProduce)
+}
+
+
 
 
 async function getItemChain(itemName,amountToProduce){ 
