@@ -19,7 +19,6 @@ form.addEventListener("submit",async (event)=>{
         const inAmount = Number(form.querySelector("#inAmount").value)
         
         drawItemCard(inItem,inAmount)
-
     }catch(err){
         console.log(err)
     }
@@ -32,7 +31,6 @@ tree.addEventListener("click",async (event)=>{
         /// 1- get item 
         const itemName = button.parentElement.getAttribute("name")
 
-        
         /// 2- create space por children
         const ul = document.createElement("ul")
         button.parentElement.parentElement.appendChild(ul)
@@ -50,7 +48,6 @@ tree.addEventListener("click",async (event)=>{
 
             ul.appendChild(childCard)
         })
-
     }
 })
 

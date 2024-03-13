@@ -14,7 +14,7 @@ export async function addInputOption(name, showName) { // ----------------------
 export async function createItemCard(item, output) {
     const productRate = Number((output / item.outPerMin[0].amountPerMin).toFixed(1))
 
-    const divCard = document.createElement("div")
+    const liCard = document.createElement("li")
 
     let mayBeButton = ``
 
@@ -27,7 +27,6 @@ export async function createItemCard(item, output) {
     //-----
 
     const html = `
-    <li>
         <div class="card" name="${item.name}">
             <div class="card-img">
                 <h5>${item.showName}</h5>
@@ -44,13 +43,12 @@ export async function createItemCard(item, output) {
             </div>
             ${mayBeButton}
         </div>
-    </li>
     `
-    divCard.innerHTML = html
+    liCard.innerHTML = html
 
     const tree = document.querySelector(".itemCard-container")
 
-    tree.appendChild(divCard)
+    tree.appendChild(liCard)
 }
 
  // ----------------------------------------------------------------------------------------------- [createChildCard]
@@ -59,7 +57,7 @@ export async function createItemCard(item, output) {
 export async function createChildCard(item, output) {
     const productRate = Number((output / item.outPerMin[0].amountPerMin).toFixed(1))
 
-    const divCard = document.createElement("div")
+    const liCard = document.createElement("li")
 
     let mayBeButton = ``
 
@@ -74,7 +72,6 @@ export async function createChildCard(item, output) {
 
 
     const html = `
-    <li>
         <div class="card" name="${item.name}">
             <div class="card-img">
                 <h5>${item.showName}</h5>
@@ -91,12 +88,11 @@ export async function createChildCard(item, output) {
             </div>
             ${mayBeButton}
         </div>
-    </li>
     `
-    divCard.innerHTML = html
+    liCard.innerHTML = html
 
-    /// return divCard
-    return divCard
+    /// return liCard
+    return liCard
 }
 
 
