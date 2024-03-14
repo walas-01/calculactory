@@ -176,10 +176,7 @@ form{
 
 .message{
     width: 85%;
-
     font-size: small;
-
-    
 
     @include mediaQuery(){
         font-size: medium;
@@ -321,7 +318,8 @@ form{
 
 .tree li {
     list-style-type: none;
-    margin: 1px 35px;
+    margin-left: 30px;
+    margin-right: 20px;
     position: relative;
 }
 

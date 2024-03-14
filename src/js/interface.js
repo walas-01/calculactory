@@ -14,12 +14,17 @@ export async function addInputOption(name, showName) { // ----------------------
 export async function createItemCard(item, output) {
     const productRate = Number((output / item.outPerMin[0].amountPerMin).toFixed(1))
 
+    console.log("---------------------------------------")
+    console.log(`[desired output of ${item.showName}]: ${output}`)
+    console.log(`[With producRate of 1 of ${item.showName} is]: ${item.outPerMin[0].amountPerMin}`)
+    console.log(`[producRate of ${item.showName}]: ${productRate}`)
+
     const liCard = document.createElement("li")
 
     let mayBeButton = ``
 
-    if(checkIfIsRawMaterial(item.inPerMin[0].name)){
-        mayBeButton = `<button class="button">[ + ]</button>`
+    if(checkIfIsRawMaterial(item.name)){
+        mayBeButton = `<button class="button" rate="${productRate}">[ + ]</button>`
     }
 
     // to get before creating
@@ -57,13 +62,18 @@ export async function createItemCard(item, output) {
 export async function createChildCard(item, output) {
     const productRate = Number((output / item.outPerMin[0].amountPerMin).toFixed(1))
 
+    console.log("---------------------------------------")
+    console.log(`[desired output of ${item.showName}]: ${output}`)
+    console.log(`[With producRate of 1 of ${item.showName} is]: ${item.outPerMin[0].amountPerMin}`)
+    console.log(`[producRate of ${item.showName}]: ${productRate}`)
+
     const liCard = document.createElement("li")
 
     let mayBeButton = ``
 
 
-    if(checkIfIsRawMaterial(item.inPerMin[0].name)){
-        mayBeButton = `<button class="button">[ + ]</button>`
+    if(checkIfIsRawMaterial(item.name)){
+        mayBeButton = `<button class="button" rate="${productRate}">[ + ]</button>`
     }
 
     // to get before creating
@@ -79,12 +89,12 @@ export async function createChildCard(item, output) {
             </div>
             <div class="card-output">
                 <img src="/src/imgs/icons/icon_out.png" alt="outputIcon">
-                <h5>${output.toFixed(1)}</h5>
+                <h5>${(output).toFixed(1)}</h5>
                 <p>/min</p>
             </div>
             <div class="card-machine">
                 <img src="${machineIcon}" alt="${item.machine}">
-                <p>${productRate}</p>
+                <p>${productRate.toFixed(1)}</p>
             </div>
             ${mayBeButton}
         </div>

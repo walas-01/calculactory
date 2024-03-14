@@ -13,4 +13,4 @@ export function checkIfIsRawMaterial(name){
     }else{
         return false
     }
-}
+}  
